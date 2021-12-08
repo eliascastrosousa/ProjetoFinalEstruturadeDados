@@ -40,6 +40,9 @@ int main(){
                     printf("Digite o id do Funcionario que deseja Remover: ");
                     scanf("%d", &identificador);
 
+                    //mostrar o funcionario
+
+
                     x =  remove_lista(li,identificador);
                     if(x){
                         printf("\nFuncionario Removido com sucesso!\n\n");
@@ -50,7 +53,9 @@ int main(){
 
 
                 case 3: //[3] Editar funcionário
-                    printf("");
+                    printf("\nSelecionado: Editar funcionário!\n");
+                    printf("Deseja alterar: \n[1] Nome  \n[2] Endereço \n[3] Idade  \n[4] Salário (Disssidio Salarial)  \n[5] Cargo  \nDigite o numero: ");
+
                     break;
 
 

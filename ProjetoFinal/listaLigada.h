@@ -25,3 +25,5 @@ int remove_lista(Lista *li, int id);
 
 void apagaLista(Lista *li);
 
+int consulta_lista_id(Lista *li, int id, FUNCIONARIO *dados_func);
+

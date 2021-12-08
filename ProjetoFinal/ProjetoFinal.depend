@@ -12,3 +12,16 @@
 	"listaLigada.h"
 	<locale.h>
 
+1637978190 source:c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\listaligada.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+
+1637978189 c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\listaligada.h
+
+1637709660 source:c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+	<locale.h>
+

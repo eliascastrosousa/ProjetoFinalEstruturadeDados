@@ -142,3 +142,6 @@ int remove_lista(Lista *li, int identificador){
     return 1;
 }
 
+int consulta_lista_id(Lista *li, int id, FUNCIONARIO *dados_func){
+
+}
