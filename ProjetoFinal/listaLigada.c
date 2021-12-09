@@ -142,6 +142,18 @@ int remove_lista(Lista *li, int identificador){
     return 1;
 }
 
-int consulta_lista_id(Lista *li, int id, FUNCIONARIO *dados_func){
-
+int consulta_lista_id(Lista *li, int identificador, FUNCIONARIO *dados_func){
+    if(li == NULL){
+        return 0;
+    }
+    ELEM *no = *li;
+    while (no != NULL && no->dados.id != identificador){
+        no = no->prox;
+    }
+    if(no ==NULL){
+        return 0;
+    }else{
+        *dados_func = no->dados;
+        return 1;
+    }
 }

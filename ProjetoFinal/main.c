@@ -7,7 +7,7 @@ int main(){
     setlocale(LC_ALL,"portuguese");
 
     Lista *li;
-    int x, menu, m, identificador;
+    int x, menu, m, identificador, opcEdit;
     li = criaLista(); //memoria alocada
 
     FILE *fp = fopen("arquivo.txt", "wb");
@@ -53,14 +53,44 @@ int main(){
 
 
                 case 3: //[3] Editar funcionário
+
                     printf("\nSelecionado: Editar funcionário!\n");
-                    printf("Deseja alterar: \n[1] Nome  \n[2] Endereço \n[3] Idade  \n[4] Salário (Disssidio Salarial)  \n[5] Cargo  \nDigite o numero: ");
+                    printf("Digite o ID do Funcionário que deseja editar: ");
+                    scanf("%d", &identificador);
+
+                    printf("\nDeseja alterar: \n[1] Nome  \n[2] Endereço \n[3] Idade  \n[4] Salário (Disssidio Salarial)  \n[5] Cargo  \nDigite o numero: ");
+                    scanf("%d", &opcEdit);
+                    /*
+                     switch (opcEdit){
+                        case 1:
+                            printf("\nSelecionado: Nome\n");
+                            dados_func = entraDados();
+                            x = insere_lista_ordenada(li,dados_func );
+                            if(x){
+                                printf("\nInserido de forma ordenada com sucesso!\n\n");
+                            }else{
+                                printf("\nNão foi possivel inserir o Funcionario!\n");
+                            }
+                            break;
+
+                        case 2 :
+
 
                     break;
 
-
+                    */
                 case 4:  //[4] Buscar funcionário por ID
-                    printf("");
+                    printf("Digite o ID do funcionario: ");
+                    scanf("%d", &identificador);
+
+                    x = consulta_lista_id(li, identificador, &dados_func);
+                    printf("\nID: %d",  dados_func.id);
+                    printf("\nNome: %s",  dados_func.nome);
+                    printf("\nEndereço: %s",  dados_func.endereco);
+                    printf("\nIdade: %d",  dados_func.idade);
+                    printf("\nSalário: %f",  dados_func.salario);
+                    printf("\nCargo: %s",  dados_func.cargo);
+
                     break;
 
 
