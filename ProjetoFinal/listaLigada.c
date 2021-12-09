@@ -157,3 +157,22 @@ int consulta_lista_id(Lista *li, int identificador, FUNCIONARIO *dados_func){
         return 1;
     }
 }
+
+
+int consulta_lista_pos(Lista *li, int posicao, FUNCIONARIO *dados_func){
+    if(li == NULL || posicao <= 0){
+        return 0;
+    }
+    ELEM *no = *li;
+    int i=1;
+    while (no != NULL && i < posicao){
+        no = no->prox;
+        i++;
+    }
+    if(no ==NULL){
+        return 0;
+    }else{
+        *dados_func = no->dados;
+        return 1;
+    }
+}

@@ -7,7 +7,7 @@ int main(){
     setlocale(LC_ALL,"portuguese");
 
     Lista *li;
-    int x, menu, m, identificador, opcEdit;
+    int x, menu, m, identificador, opcEdit, posicao;
     li = criaLista(); //memoria alocada
 
     FILE *fp = fopen("arquivo.txt", "wb");
@@ -96,17 +96,18 @@ int main(){
 
 
                 case 5:  //[5] Exibir funcionário ordenados por ID
-                    printf("Exibindo todos os funcionarios por ID");
+                    printf("\nExibindo todos os funcionarios");
+                    int c = tamLista(li);
+                    printf("\nTamanho da Lista é: %d", c);
 
-                    x = consulta_lista_id(li, identificador, &dados_func);
-                    printf("\n----------------------\n\t\t Resultado...\n");
-                    printf("\nID: %d",  dados_func.id);
-                    printf("\nNome: %s",  dados_func.nome);
-                    printf("Endereço: %s",  dados_func.endereco);
-                    printf("Idade: %d",  dados_func.idade);
-                    printf("\nSalário: %0.2f",  dados_func.salario);
-                    printf("\nCargo: %s\n----------------------\n",  dados_func.cargo);
-
+                    for(posicao = 0; posicao < c ; posicao++){
+                            x = consulta_lista_pos(li, posicao, &dados_func);
+                            printf("\n----------------------\n\t\t Resultado...\n");
+                            printf("\nID: %d",  dados_func.id);
+                            printf("\nNome: %s",  dados_func.nome);
+                            printf("\nSalário: %0.2f",  dados_func.salario);
+                            printf("\nCargo: %s\n----------------------\n",  dados_func.cargo);
+                   }
                     break;
 
 
