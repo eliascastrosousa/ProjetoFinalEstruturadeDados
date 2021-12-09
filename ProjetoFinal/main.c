@@ -7,7 +7,7 @@ int main(){
     setlocale(LC_ALL,"portuguese");
 
     Lista *li;
-    int x, menu, m, identificador, opcEdit, posicao;
+    int x, menu, m, identificador, opcEdit, posicao, min, max;
     li = criaLista(); //memoria alocada
 
     FILE *fp = fopen("arquivo.txt", "wb");
@@ -98,10 +98,10 @@ int main(){
                 case 5:  //[5] Exibir funcionário ordenados por ID
                     printf("\nExibindo todos os funcionarios");
                     int c = tamLista(li);
-                    printf("\nTamanho da Lista é: %d", c);
+                    printf("\nQuantidade de Funcionarios é: %d\n", c);
 
                     for(posicao = 0; posicao < c ; posicao++){
-                            x = consulta_lista_pos(li, posicao, &dados_func);
+                            x = consulta_lista_id(li, identificador, &dados_func);
                             printf("\n----------------------\n\t\t Resultado...\n");
                             printf("\nID: %d",  dados_func.id);
                             printf("\nNome: %s",  dados_func.nome);
@@ -112,13 +112,12 @@ int main(){
 
 
                 case 6: //[6] Exibir uma lista de funcionários por faixa salarial.
-                    printf("");
-                    break;
+                    printf("\nExibindo lista de funcionários por faixa salarial.");
+                    printf("\nDigite o intervalo minimo do sálario: ");
+                    scanf("%f", &min);
+                    printf("\nDigite o intervalo maximo do sálario: ");
+                    scanf("%f", &max);
 
-                case 7: //Mostrar qtd de funcionarios
-                    printf("\nSelecionado: Mostrar qtd de funcionarios! \n");
-                    x = tamLista(li);
-                    printf("\nO tamanho da lista é: %d\n\n",x);
                     break;
 
                 default:
