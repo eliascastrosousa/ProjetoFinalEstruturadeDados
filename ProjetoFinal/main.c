@@ -84,18 +84,29 @@ int main(){
                     scanf("%d", &identificador);
 
                     x = consulta_lista_id(li, identificador, &dados_func);
+                    printf("\n----------------------\n\t\t Resultado...\n");
                     printf("\nID: %d",  dados_func.id);
                     printf("\nNome: %s",  dados_func.nome);
-                    printf("\nEndereço: %s",  dados_func.endereco);
-                    printf("\nIdade: %d",  dados_func.idade);
-                    printf("\nSalário: %f",  dados_func.salario);
-                    printf("\nCargo: %s",  dados_func.cargo);
+                    printf("Endereço: %s",  dados_func.endereco);
+                    printf("Idade: %d",  dados_func.idade);
+                    printf("\nSalário: %0.2f",  dados_func.salario);
+                    printf("\nCargo: %s\n----------------------\n",  dados_func.cargo);
 
                     break;
 
 
                 case 5:  //[5] Exibir funcionário ordenados por ID
-                    printf("");
+                    printf("Exibindo todos os funcionarios por ID");
+
+                    x = consulta_lista_id(li, identificador, &dados_func);
+                    printf("\n----------------------\n\t\t Resultado...\n");
+                    printf("\nID: %d",  dados_func.id);
+                    printf("\nNome: %s",  dados_func.nome);
+                    printf("Endereço: %s",  dados_func.endereco);
+                    printf("Idade: %d",  dados_func.idade);
+                    printf("\nSalário: %0.2f",  dados_func.salario);
+                    printf("\nCargo: %s\n----------------------\n",  dados_func.cargo);
+
                     break;
 
 
