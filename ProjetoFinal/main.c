@@ -62,8 +62,8 @@ int main(){
                     printf("\nDeseja alterar: \n[1] Nome  \n[2] Endereço \n[3] Idade  \n[4] Salário (Disssidio Salarial)  \n[5] Cargo  \nDigite o numero: ");
                     scanf("%d", &opcEdit);
 
-                     //switch (opcEdit){
-                        //case 1:
+                     switch (opcEdit){
+                        case 1:
                             printf("\nSelecionado: Nome\n");
 
                             getchar();
@@ -77,7 +77,43 @@ int main(){
                                 printf("\nNão foi possivel inserir o Funcionario!\n");
                             }
                             break;
-                        //break;
+
+                        case 2:
+                            printf("Selecionado: Endereço\n");
+
+                            getchar();
+                            printf("Digite o novo Endereço: ");
+                            fgets(dados_func.endereco, 49, stdin);
+
+                            x = insere_lista_ordenada(li,dados_func );
+                            if(x){
+                                printf("\nInserido de forma ordenada com sucesso!\n\n");
+                            }else{
+                                printf("\nNão foi possivel inserir o Funcionario!\n");
+                            }
+                            break;
+
+                        case 3:
+                            printf("Selecionado: Idade\n");
+
+
+                            printf("Digite a idade: ");
+                            scanf("%d", &dados_func.idade);
+
+                            x = insere_lista_ordenada(li,dados_func );
+                            if(x){
+                                printf("\nInserido de forma ordenada com sucesso!\n\n");
+                            }else{
+                                printf("\nNão foi possivel inserir o Funcionario!\n");
+                            }
+                            break;
+
+                        //continuarpondo os outros
+
+
+
+
+                        break;
 
                 case 4:  //[4] Buscar funcionário por ID
                     printf("Digite o ID do funcionario: ");
