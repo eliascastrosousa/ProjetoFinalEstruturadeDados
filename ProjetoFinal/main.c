@@ -55,16 +55,21 @@ int main(){
                 case 3: //[3] Editar funcionário
 
                     printf("\nSelecionado: Editar funcionário!\n");
+
                     printf("Digite o ID do Funcionário que deseja editar: ");
                     scanf("%d", &identificador);
 
                     printf("\nDeseja alterar: \n[1] Nome  \n[2] Endereço \n[3] Idade  \n[4] Salário (Disssidio Salarial)  \n[5] Cargo  \nDigite o numero: ");
                     scanf("%d", &opcEdit);
-                    /*
-                     switch (opcEdit){
-                        case 1:
+
+                     //switch (opcEdit){
+                        //case 1:
                             printf("\nSelecionado: Nome\n");
-                            dados_func = entraDados();
+
+                            getchar();
+                            printf("Digite o novo Nome: ");
+                            fgets(dados_func.nome, 49, stdin);
+
                             x = insere_lista_ordenada(li,dados_func );
                             if(x){
                                 printf("\nInserido de forma ordenada com sucesso!\n\n");
@@ -72,13 +77,8 @@ int main(){
                                 printf("\nNão foi possivel inserir o Funcionario!\n");
                             }
                             break;
+                        //break;
 
-                        case 2 :
-
-
-                    break;
-
-                    */
                 case 4:  //[4] Buscar funcionário por ID
                     printf("Digite o ID do funcionario: ");
                     scanf("%d", &identificador);
@@ -117,7 +117,6 @@ int main(){
                     scanf("%f", &min);
                     printf("\nDigite o intervalo maximo do sálario: ");
                     scanf("%f", &max);
-
                     break;
 
                 default:
