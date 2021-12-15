@@ -96,7 +96,6 @@ int main(){
                         case 3:
                             printf("Selecionado: Idade\n");
 
-
                             printf("Digite a idade: ");
                             scanf("%d", &dados_func.idade);
 
@@ -108,12 +107,41 @@ int main(){
                             }
                             break;
 
-                        //continuarpondo os outros
+                        case 4:
+                            printf("Selecionado: Salário!\n");
 
+                            int porcent;
+                            printf("\nDigite o reajuste (%%) a ser aplicado no salario: ");
+                            scanf("%d", &porcent);
+                            x = dados_func.salario * porcent/100;
+                            dados_func.salario = dados_func.salario + x;
 
+                            x = insere_lista_ordenada(li,dados_func );
+                            if(x){
+                                printf("\nInserido de forma ordenada com sucesso!\n\n");
+                            }else{
+                                printf("\nNão foi possivel inserir o Funcionario!\n");
+                            }
+                            break;
 
+                        case 5:
+                            printf("Selecionado: Cargo\n");
 
-                        break;
+                            getchar();
+                            printf("Digite o novo Cargo: ");
+                            fgets(dados_func.cargo, 49, stdin);
+
+                            x = insere_lista_ordenada(li,dados_func );
+                            if(x){
+                                printf("\nInserido de forma ordenada com sucesso!\n\n");
+                            }else{
+                                printf("\nNão foi possivel inserir o Funcionario!\n");
+                            }
+                            break;
+                        default:
+                            printf("Opção invalida\n");
+                        }
+
 
                 case 4:  //[4] Buscar funcionário por ID
                     printf("Digite o ID do funcionario: ");
@@ -133,26 +161,18 @@ int main(){
 
                 case 5:  //[5] Exibir funcionário ordenados por ID
                     printf("\nExibindo todos os funcionarios");
-                    int c = tamLista(li);
-                    printf("\nQuantidade de Funcionarios é: %d\n", c);
-
-                    for(posicao = 0; posicao < c ; posicao++){
-                            x = consulta_lista_id(li, identificador, &dados_func);
-                            printf("\n----------------------\n\t\t Resultado...\n");
-                            printf("\nID: %d",  dados_func.id);
-                            printf("\nNome: %s",  dados_func.nome);
-                            printf("\nSalário: %0.2f",  dados_func.salario);
-                            printf("\nCargo: %s\n----------------------\n",  dados_func.cargo);
-                   }
+                    imprimir_lista(li);
                     break;
 
-
                 case 6: //[6] Exibir uma lista de funcionários por faixa salarial.
-                    printf("\nExibindo lista de funcionários por faixa salarial.");
+                    printf("Salarios por faixa salarial");
                     printf("\nDigite o intervalo minimo do sálario: ");
                     scanf("%f", &min);
                     printf("\nDigite o intervalo maximo do sálario: ");
                     scanf("%f", &max);
+
+                    printf("\nExibindo lista de funcionários por faixa salarial.");
+
                     break;
 
                 default:
@@ -161,6 +181,7 @@ int main(){
             }while(m != 0);
 
             printf("\n\nSalvando arquivos...\n\n");
+
             //fwrite(cand, sizeof(Candidato), n, fp);
             fclose(fp);
             apagaLista(li);

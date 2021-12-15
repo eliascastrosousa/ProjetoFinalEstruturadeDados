@@ -176,3 +176,20 @@ int consulta_lista_pos(Lista *li, int posicao, FUNCIONARIO *dados_func){
         return 1;
     }
 }
+
+void imprimir_lista(Lista* li){
+    ELEM *aux = li;
+    while(aux != NULL){
+
+        printf("\nID: %", aux->dados.id);
+        printf("\nNome: %s",  aux->dados.nome);
+        printf("\nCargo: %s",  aux->dados.cargo);
+        printf("\nSalário: %0.2f\n----------------------\n", aux->dados.salario);
+        aux = aux->prox;
+
+    }
+}
+
+
+
+
