@@ -10,15 +10,9 @@ int main(){
     int x, menu, m, identificador, opcEdit, posicao, min, max;
     li = criaLista(); //memoria alocada
 
-    FILE *fp = fopen("arquivo.txt", "wb");
-    if (fp == NULL){
-        printf("Erro na abertura!\n");
-        system("pause");
-        exit(1);
-    }
      struct funcionario dados_func;
 
-    printf("\n\t\t\t\t Bem vindo as Industrias Acme!\n\n");
+    printf("\n\t\t\t\t\t\t Bem vindo as Industrias Acme!\n\n");
 
     do {
             m = menuLista();
@@ -26,6 +20,9 @@ int main(){
                 case 1: //[1] Adicionar funcionário
                     printf("\nSelecionado: Adicionar funcionário!\n");
                     dados_func = entraDados();
+                    ArquivoBinario(FUNCIONARIO *funcionario);
+
+
                     x = insere_lista_ordenada(li,dados_func );
                     if(x){
                         printf("\nInserido de forma ordenada com sucesso!\n\n");
@@ -111,7 +108,7 @@ int main(){
                             printf("Selecionado: Salário!\n");
 
                             int porcent;
-                            printf("\nDigite o reajuste (%%) a ser aplicado no salario: ");
+                            printf("\nDigite o reajuste ( em '%') a ser aplicado no salario: ");
                             scanf("%d", &porcent);
                             x = dados_func.salario * porcent/100;
                             dados_func.salario = dados_func.salario + x;
@@ -138,10 +135,12 @@ int main(){
                                 printf("\nNão foi possivel inserir o Funcionario!\n");
                             }
                             break;
+
                         default:
                             printf("Opção invalida\n");
+                            break;
                         }
-
+                    break;
 
                 case 4:  //[4] Buscar funcionário por ID
                     printf("Digite o ID do funcionario: ");
@@ -158,10 +157,9 @@ int main(){
 
                     break;
 
-
                 case 5:  //[5] Exibir funcionário ordenados por ID
-                    printf("\nExibindo todos os funcionarios");
-                    imprimir_lista(li);
+                    printf("\nExibindo todos os funcionarios\n-----------------------------------------------------------");
+                    imprimir_lista(li, &dados_func);
                     break;
 
                 case 6: //[6] Exibir uma lista de funcionários por faixa salarial.
@@ -172,7 +170,7 @@ int main(){
                     scanf("%f", &max);
 
                     printf("\nExibindo lista de funcionários por faixa salarial.");
-
+                    //FAZER A FUNÇÃO PARA MOSTRAR OS SALARIOS USANDO ESSAS VARIAVEIS
                     break;
 
                 default:

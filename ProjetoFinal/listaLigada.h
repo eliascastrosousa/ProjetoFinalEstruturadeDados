@@ -11,6 +11,8 @@ typedef struct elemento* Lista;
 
 Lista *criaLista();
 
+void ArquivoBinario(FUNCIONARIO *funcionario);
+
 int menuLista(menu);
 
 FUNCIONARIO entraDados();
@@ -29,4 +31,4 @@ int consulta_lista_id(Lista *li, int identificador, FUNCIONARIO *dados_func);
 
 int consulta_lista_pos(Lista *li, int posicao, FUNCIONARIO *dados_func);
 
-void imprimir_lista(Lista* li);
+void imprimir_lista(Lista *li, FUNCIONARIO *dados_func);
