@@ -7,7 +7,8 @@ int main(){
     setlocale(LC_ALL,"portuguese");
 
     Lista *li;
-    int x, menu, m, identificador, opcEdit, posicao, min, max;
+    int x, menu, m, identificador, opcEdit, posicao;
+    float mini, maxi;
     li = criaLista(); //memoria alocada
 
      struct funcionario dados_func;
@@ -20,8 +21,6 @@ int main(){
                 case 1: //[1] Adicionar funcionário
                     printf("\nSelecionado: Adicionar funcionário!\n");
                     dados_func = entraDados();
-                    ArquivoBinario(FUNCIONARIO *funcionario);
-
 
                     x = insere_lista_ordenada(li,dados_func );
                     if(x){
@@ -36,10 +35,6 @@ int main(){
                     printf("\nSelecionado: Remover funcionário!\n");
                     printf("Digite o id do Funcionario que deseja Remover: ");
                     scanf("%d", &identificador);
-
-                    //mostrar o funcionario
-
-
                     x =  remove_lista(li,identificador);
                     if(x){
                         printf("\nFuncionario Removido com sucesso!\n\n");
@@ -52,21 +47,17 @@ int main(){
                 case 3: //[3] Editar funcionário
 
                     printf("\nSelecionado: Editar funcionário!\n");
-
                     printf("Digite o ID do Funcionário que deseja editar: ");
                     scanf("%d", &identificador);
-
                     printf("\nDeseja alterar: \n[1] Nome  \n[2] Endereço \n[3] Idade  \n[4] Salário (Disssidio Salarial)  \n[5] Cargo  \nDigite o numero: ");
                     scanf("%d", &opcEdit);
 
                      switch (opcEdit){
                         case 1:
                             printf("\nSelecionado: Nome\n");
-
                             getchar();
                             printf("Digite o novo Nome: ");
                             fgets(dados_func.nome, 49, stdin);
-
                             x = insere_lista_ordenada(li,dados_func );
                             if(x){
                                 printf("\nInserido de forma ordenada com sucesso!\n\n");
@@ -77,11 +68,9 @@ int main(){
 
                         case 2:
                             printf("Selecionado: Endereço\n");
-
                             getchar();
                             printf("Digite o novo Endereço: ");
                             fgets(dados_func.endereco, 49, stdin);
-
                             x = insere_lista_ordenada(li,dados_func );
                             if(x){
                                 printf("\nInserido de forma ordenada com sucesso!\n\n");
@@ -92,10 +81,8 @@ int main(){
 
                         case 3:
                             printf("Selecionado: Idade\n");
-
                             printf("Digite a idade: ");
                             scanf("%d", &dados_func.idade);
-
                             x = insere_lista_ordenada(li,dados_func );
                             if(x){
                                 printf("\nInserido de forma ordenada com sucesso!\n\n");
@@ -165,12 +152,12 @@ int main(){
                 case 6: //[6] Exibir uma lista de funcionários por faixa salarial.
                     printf("Salarios por faixa salarial");
                     printf("\nDigite o intervalo minimo do sálario: ");
-                    scanf("%f", &min);
+                    scanf("%f", &mini);
                     printf("\nDigite o intervalo maximo do sálario: ");
-                    scanf("%f", &max);
+                    scanf("%f", &maxi);
 
                     printf("\nExibindo lista de funcionários por faixa salarial.");
-                    //FAZER A FUNÇÃO PARA MOSTRAR OS SALARIOS USANDO ESSAS VARIAVEIS
+                    imprimir_listaRange(li, &dados_func, mini, maxi);
                     break;
 
                 default:
@@ -180,8 +167,6 @@ int main(){
 
             printf("\n\nSalvando arquivos...\n\n");
 
-            //fwrite(cand, sizeof(Candidato), n, fp);
-            fclose(fp);
             apagaLista(li);
             printf("Limpando dados da sessão...\nObrigado.\n\n");
             system("pause");

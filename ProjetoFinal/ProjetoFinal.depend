@@ -12,14 +12,14 @@
 	"listaLigada.h"
 	<locale.h>
 
-1639613692 source:c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\listaligada.c
+1639618795 source:c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\listaligada.c
 	<stdio.h>
 	<stdlib.h>
 	"listaLigada.h"
 
-1639613391 c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\listaligada.h
+1639618795 c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\listaligada.h
 
-1639613644 source:c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\main.c
+1639618274 source:c:\users\elias\documents\github\projetofinalestruturadedados\projetofinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	"listaLigada.h"

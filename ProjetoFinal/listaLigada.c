@@ -18,7 +18,7 @@ Lista *criaLista(){
     return li;
 }
 
-void ArquivoBinario(FUNCIONARIO *funcionario){
+/*void ArquivoBinario(FUNCIONARIO *funcionario){
     FILE *fp = fopen("arquivo.txt", "wb");
     if (fp == NULL){
         printf("Erro na abertura!\n");
@@ -28,7 +28,7 @@ void ArquivoBinario(FUNCIONARIO *funcionario){
 
     fwrite(*funcionario, sizeof(FUNCIONARIO), fp);
     fclose(fp);
-}
+}*/
 
 void apagaLista(Lista *li){ //passa o endereço da inteira que se quer liberar
     if(li != NULL){   //Lista é valida se for diferente de NULL
@@ -171,24 +171,6 @@ int consulta_lista_id(Lista *li, int identificador, FUNCIONARIO *dados_func){
 }
 
 
-int consulta_lista_pos(Lista *li, int posicao, FUNCIONARIO *dados_func){
-    if(li == NULL || posicao <= 0){
-        return 0;
-    }
-    ELEM *no = *li;
-    int i=1;
-    while (no != NULL && i < posicao){
-        no = no->prox;
-        i++;
-    }
-    if(no ==NULL){
-        return 0;
-    }else{
-        *dados_func = no->dados;
-        return 1;
-    }
-}
-
 void imprimir_lista(Lista *li, FUNCIONARIO *dados_func){
     ELEM *no = *li;
     while(no != NULL){
@@ -200,5 +182,22 @@ void imprimir_lista(Lista *li, FUNCIONARIO *dados_func){
         no = no->prox;
     }
 }
+
+void imprimir_listaRange(Lista *li, FUNCIONARIO *dados_func, float mini,float maxi){
+    ELEM *no = *li;
+            while(no != NULL){
+                if(no->dados.salario > mini & no->dados.salario < maxi ){
+                    printf("\nID: %d", no->dados.id);
+                    printf("\nNome: %s",  no->dados.nome);
+                    printf("Cargo: %s",  no->dados.cargo);
+                    printf("Salário: %0.2f\n----------------------\n", no->dados.salario);
+                    no = no->prox;
+                }else{
+                    no = no->prox;
+            }
+        }
+}
+
+
 
 

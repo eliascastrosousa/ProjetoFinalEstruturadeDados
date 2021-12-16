@@ -32,3 +32,5 @@ int consulta_lista_id(Lista *li, int identificador, FUNCIONARIO *dados_func);
 int consulta_lista_pos(Lista *li, int posicao, FUNCIONARIO *dados_func);
 
 void imprimir_lista(Lista *li, FUNCIONARIO *dados_func);
+
+void imprimir_listaRange(Lista *li, FUNCIONARIO *dados_func, float mini,float maxi);
