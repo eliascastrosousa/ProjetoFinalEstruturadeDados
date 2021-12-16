@@ -1,3 +1,6 @@
+//Caio da Luz Rodrigues - GU3015432
+//ELIAS CASTRO SOUSA JUNIOR - GU3015378
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "listaLigada.h"
